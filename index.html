@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header class="header">
+        <a href="#home" class="logo">ANUJ
+            <span>Dhiman</span>
+        </a>
+
+        <i class="bx bx-menu" id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="#">Home</a>
+            <a href="#about">About</a>
+            <a href="https://medium.com/@GrayWhite">Article</a>
+            <a href="#service">Services</a>
+            <a href="#contact">Contact Me</a>
+        </nav>
+    </header>
+
+
+    <section class="home" id="home" style="margin-top: 30px;">
+        <div class="home-content">
+            <h1>Hi, It's <span>Anuj</span></h1>
+            <h3>I'm a <span id="changing-text">Cybersecurity Expert </span></h3>
+            <p>A versatile security specialist & developer, I specialize in offensive and defensive security, penetration testing,  
+                and secure coding. With expertise in Python development, ethical hacking, web and cloud security, API & network penetration testing,  
+                I help businesses fortify their digital presence.  </p>
+            <div class="social-icon">
+                <a href=""><i class="bx bxl-instagram"></i></a>
+                <a href=""><i class="bx bxl-github"></i></a>
+                <a href=""><i class="bx bxl-linkedin-square"></i></a>
+                <a href=""><i class="bx bxl-twitter"></i></a>
+                <a href=""><i class="bx bxl-facebook"></i></a>
+            </div>
+            <div class="btn-group">
+                <a href="#contact" class="btn">Hire Me</a>
+                <a href="#contact" class="btn">Contact Me</a>
+            </div>
+        </div>
+        <div class="home-img">
+            <img src="image.jpg" alt="">
+        </div>
+    </section>
+
+
+    <!-- ============about is started ======================-->
+
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="image.jpg" alt="">
+        </div>
+        <div class="about-contant">
+            <h2>About <span>Me</span></h2>
+            <p>
+                I am Anuj, a passionate cybersecurity professional with expertise in ethical hacking, penetration testing,  
+                and secure application development. With years of experience in offensive & defensive security,  
+                I specialize in securing web applications, cloud platforms, APIs, and networks from cyber threats.  
+            </p>
+            <br>
+            <p>
+                My skill set includes Python development, Linux security, red teaming, OSINT investigations,  
+                and vulnerability assessments. I am committed to empowering businesses with the best security solutions  
+                and helping them stay ahead of cyber threats.
+            </p>
+            <br>
+            <p>
+                Whether it's securing digital assets, testing for vulnerabilities, or developing robust security infrastructures,  
+                I bring a hacker's mindset with a defender's approach.  
+            </p>
+            <a href="#about" class="btn">
+                Read More
+            </a>
+
+
+        </div>
+    </section>
+
+    <!-- ===========SERVICE SECTION ==================== -->
+    <section class="service" id="service">
+        <h2 class="heading">Services</h2>
+
+        <div class="services-container">
+            <div class="service-box">
+                <div class="service-info">
+                    <i class="bx bx-code"></i>
+                    <h4>Devlopment Services</h4>
+                    <p>
+                        I offer full-stack development services, including web, mobile, and API development.  
+                        My expertise spans secure coding, blockchain integration, cloud applications, and DevOps solutions,  
+                        ensuring scalable and high-performance digital products.
+                    </p>
+                </div>
+            </div>
+            <div class="service-box">
+                <div class="service-info">
+                    <i class="bx bx-shield-quarter"></i>
+                    <h4>CyberSecurity Services</h4>
+                    <p>
+                        Specializing in penetration testing, OSINT, vulnerability assessment, and security consulting,  
+                        I help businesses protect their digital assets. My services include network security, API security,  
+                        and ethical hacking to prevent cyber threats.
+                    </p>
+                </div>
+            </div>
+            <div class="service-box">
+                <div class="service-info">
+                    <i class="bx bx-book"></i>
+                    <h4>Training & Coaching</h4>
+                    <p>
+                        I provide cybersecurity training, ethical hacking courses, and mentorship programs.  
+                        My goal is to empower individuals and organizations with the skills needed to combat modern cyber threats  
+                        through practical, hands-on learning.
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================contact section============ -->
+
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me</span></h2>
+
+        <form id="contactForm">
+            <div class="input-group">
+                <div class="input-box">
+                    <input type="text" name="entry.861678281" placeholder="Your Name" required>
+                    <input type="email" name="entry.1920226473" placeholder="Email" required>
+                </div>
+                <div class="input-box">
+                    <input type="text" name="entry.1254194172" placeholder="Phone Number" required>
+                    <input type="text" name="entry.1901091116" placeholder="Subject" required>
+                </div>
+            </div>
+
+            <div class="input-group-2">
+                <textarea name="entry.718719985" cols="30" rows="10" placeholder="Your Message" required></textarea>
+                <input type="submit" value="Send Message" class="btn">
+            </div>
+        </form>
+
+        <div id="successMessage" style="display: none; color: green; font-size: 18px; margin-top: 10px;">
+            ✅ Message Sent Successfully!
+        </div>
+    </section>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            let formData = new FormData(this);
+
+            fetch("https://docs.google.com/forms/d/e/1FAIpQLSdt0QfzsDxFFk8QYLLXBRlNR1W0nua8yrePpY4Jg3eVLU3_Fg/formResponse", {
+                method: "POST",
+                body: formData,
+                mode: "no-cors" // Prevent redirection
+            }).then(() => {
+                document.getElementById("successMessage").style.display = "block"; // Show success message
+                document.getElementById("contactForm").reset(); // Clear form after submission
+            }).catch(error => console.error("Error:", error));
+        });
+    </script>
+
+
+
+    <!-- =====================footr section ============================ -->
+
+
+    <footer class="footer">
+        <div class="social-icon">
+            <a href="">
+                <i class="bx bxl-instagram"></i>
+            </a>
+            <a href="">
+                <i class="bx bxl-github"></i>
+            </a>
+            <a href="">
+                <i class="bx bxl-linkedin-square"></i>
+            </a>
+            <a href="">
+                <i class="bx bxl-twitter"></i>
+            </a>
+            <a href="">
+                <i class="bx bxl-facebook"></i>
+            </a>
+
+        </div>
+
+        <ul class="list">
+            <li>
+                <a href="#"> FAQ</a>
+            </li>
+            <li>
+                <a href="#service">Services</a>
+            </li>
+            <li>
+                <a href="#about">About</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+        <p class="copyright"> &copy; Anuj Dhiman | 2024. All right reserved</p>
+
+    </footer>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
